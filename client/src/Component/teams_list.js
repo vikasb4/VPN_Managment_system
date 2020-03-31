@@ -29,6 +29,19 @@ const data =
   "102": "Vikas V",
   "103": "Pushpak K",
   "104": "Reenee H",
+  "105": "Steve K",
+  "106": "Leila J",
+  "107": "Niki V",
+  "108": "Katrena M",
+  "109": "Michelle C",
+  "110": "Yeri K",
+  "111": "Craig S",
+  "112": "Corey G",
+  "113": "Dimitri F",
+  "114": "Pranav T",
+  "115": "Luisa L",
+  "116": "Katherine M",
+  "117": "May May S",
   "200": "Ron M",
   "201": "Kreishanth R",
   "202": "Yifei Z",
@@ -107,8 +120,8 @@ class  Team extends React.Component{
  
     <Card.Title ><b><h2>{this.props.name}</h2></b></Card.Title>
       
-  
-  <ListGroup >
+  <div >
+  <ListGroup  >
             {
               this.state.teamList.sort((a, b) => {
                 if (data[a] < data[b]) {
@@ -118,7 +131,7 @@ class  Team extends React.Component{
                 }
               }).map((userId) => {
                 return (
-                  <ListGroup.Item ><h3>{data[userId]} </h3> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
+                  <ListGroup.Item style={{height: '5rem', padding: '0px'}}><label style={{fontSize: '2rem', marginBottom: '0px'}}>{data[userId]}</label> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
                 );
               })
             }
@@ -126,6 +139,7 @@ class  Team extends React.Component{
     
     
   </ListGroup>
+  </div>
   </Card.Body>
 </Card>
 

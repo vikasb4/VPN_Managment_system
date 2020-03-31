@@ -90,11 +90,11 @@ class Toggle extends PureComponent {
   render() {
     return (
 
-      <div>
-        <Switch activeBoxShadow= '0 0 2px 3px #3bf' onChange={this.handleChange} checked={this.state.checked} />
-       <div><b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div> 
-
-      </div>
+      <div className = "Team " style={{ display: 'contents' }}>
+        <Switch  onChange={this.handleChange} checked={this.state.checked} />
+       <div><b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div>
+       </div>
+       
 
     );
   }

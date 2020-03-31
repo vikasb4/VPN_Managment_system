@@ -120,15 +120,17 @@ class App extends React.Component {
 
 
         <div className="App" >
-          <h1>VPN MANAGMENT TOOL </h1>
+          <h1>VPN MANAGEMENT TOOL </h1>
           <div className="column">
           <div className = "row" style={{marginRight : '5px', marginLeft : '20px'}}>
-          <h2>Total no. of VPNS in use: <label style={{color:'blue'}}>{this.state.currentConnections.length} </label></h2>
-          <h2 style={{marginLeft : 'auto'}}>Available VPNS:<label style={{color:'red'}}>{58 - this.state.currentConnections.length}</label></h2>
+          <h2>Total no. of VPNs in use: <label style={{color:'blue'}}>{this.state.currentConnections.length} </label></h2>
+          <h2 style={{marginLeft : 'auto'}}>Available VPNs:<label style={{color:'red'}}>{58 - this.state.currentConnections.length}</label></h2>
           </div>
           </div>
 
-          <b><h6 style={{color:'red'}}>*Hit on the Toggle button whne you start using VPN*</h6></b>
+          <p style={{color:'red'}}><b>**Users are to set their VPN setting when they connect and disconnect to VPN ** 
+                               Priority 3 users must disconnect when the available number of VPN connections goes to or below 3
+                               Those that have been on longest should disconnect first.**</b></p>
 
 
           <div className="row" style={{justifyContent:'center'}}>
@@ -136,7 +138,7 @@ class App extends React.Component {
 
             <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
-            <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
+            <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
             <div className="column">  <Team name="Priority 3" teamList={[200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using} /></div>
 
