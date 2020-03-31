@@ -112,9 +112,9 @@ class App extends React.Component {
     <div className="App" >
       <h1>VPN MANAGMENT SYSTEM </h1>
 
-  <h1>Total no.of vpns in use {this.state.count} </h1>
+      <h1>Total no.of vpns in use {this.state.currentConnections.length} </h1>
 
-  <h1>available vpns:{this.state.count - 53 }</h1>
+  <h1>available vpns:{ 58 - this.state.currentConnections.length }</h1>
 
 
   <div className="row" align = "center">
