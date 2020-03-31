@@ -127,13 +127,13 @@ class App extends React.Component {
 
 
           <div className="row" align="center">
-            <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
+            {/* <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
-            {/* <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
+            <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
-            {/* <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
+            <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
-            {/* <div className="column">  <Team name="Priority 3" teamList={[200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using} /></div> */}
+            <div className="column">  <Team name="Priority 3" teamList={[200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using} /></div>
 
           </div>
         </div>
