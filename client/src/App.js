@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import font from'./App.css';
 import Team from './Component/teams_list'
 import Countdown from 'react-countdown-now';
 import Toggle from './Component/Toggle';
 import io from 'socket.io-client';
+
 
 let count = 0
 var socket;
@@ -119,14 +120,18 @@ class App extends React.Component {
 
 
         <div className="App" >
-          <h1>VPN MANAGMENT SYSTEM </h1>
+          <h1>VPN MANAGMENT TOOL </h1>
+          <div className="column">
+          <div className = "row" style={{marginRight : '5px', marginLeft : '20px'}}>
+          <h2>Total no. of VPNS in use: <label style={{color:'blue'}}>{this.state.currentConnections.length} </label></h2>
+          <h2 style={{marginLeft : 'auto'}}>Available VPNS:<label style={{color:'red'}}>{58 - this.state.currentConnections.length}</label></h2>
+          </div>
+          </div>
 
-          <h1>Total no.of vpns in use {this.state.currentConnections.length} </h1>
-
-          <h1>available vpns:{58 - this.state.currentConnections.length}</h1>
+          <b><h6 style={{color:'red'}}>*Hit on the Toggle button whne you start using VPN*</h6></b>
 
 
-          <div className="row" align="center">
+          <div className="row" style={{justifyContent:'center'}}>
             {/* <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
             <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>

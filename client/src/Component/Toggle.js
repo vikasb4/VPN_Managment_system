@@ -91,8 +91,8 @@ class Toggle extends PureComponent {
     return (
 
       <div>
-        <Switch onChange={this.handleChange} checked={this.state.checked} />
-        <b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b>
+        <Switch activeBoxShadow= '0 0 2px 3px #3bf' onChange={this.handleChange} checked={this.state.checked} />
+       <div><b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div> 
 
       </div>
 

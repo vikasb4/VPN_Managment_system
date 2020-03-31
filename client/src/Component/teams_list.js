@@ -102,17 +102,13 @@ class  Team extends React.Component{
       <div className = "Team "  >
        
 
-        <Card style={{ width: '25rem' }}>
-  {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
+        <Card border="dark"  style={{ width: '25rem' }}>
   <Card.Body>
  
-    <Card.Title><h2>{this.props.name}</h2></Card.Title>
-    <Card.Text>
-  Total no.of hours used by team: 
-    </Card.Text>
+    <Card.Title ><b><h2>{this.props.name}</h2></b></Card.Title>
       
-  </Card.Body>
-  <ListGroup className="list-group-flush" >
+  
+  <ListGroup >
             {
               this.state.teamList.sort((a, b) => {
                 if (data[a] < data[b]) {
@@ -122,7 +118,7 @@ class  Team extends React.Component{
                 }
               }).map((userId) => {
                 return (
-                  <ListGroup.Item ><h4>{data[userId]} </h4> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
+                  <ListGroup.Item ><h3>{data[userId]} </h3> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
                 );
               })
             }
@@ -130,6 +126,7 @@ class  Team extends React.Component{
     
     
   </ListGroup>
+  </Card.Body>
 </Card>
 
        </div>
