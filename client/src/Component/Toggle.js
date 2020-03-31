@@ -6,27 +6,34 @@ let value = 0;
 class Toggle extends PureComponent {
   
   constructor(props) {
-   
+    console.log(props);
     super(props);
-    this.state = { checked: false,time: 0,
+    this.state = {
+      checked: props.toggled,
+      time: 0,
       isOn: false,
       start: 0,
       value: 0
-     
-
     };
     this.handleChange = this.handleChange.bind(this);
     this.starttimer = this.starttimer.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
    
   }
+
+  static getDerivedStateFromProps(nextProps) {
+    console.log('---');
+    console.log(nextProps);
+    return {
+      checked: nextProps.toggled
+    };
+  }
  
   handleChange(checked) {
     this.setState({ checked});
-    
-    if(this.state.checked==true && this.state.isOn==false)
-    this.starttimer();
-
+    if(this.state.checked==true && this.state.isOn==false) {
+      this.starttimer();
+    }
     else(
       this.resetTimer()
     )

@@ -3,7 +3,9 @@ var app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-let connectionsInUse = {};
+let connectionsInUse = {
+  Danielle: 0
+};
 
 io.on('connection', (socket) => {
   // Socket listener.
@@ -11,10 +13,10 @@ io.on('connection', (socket) => {
     try {
       if (connectionsInUse[data.user] != null) {
         delete connectionsInUse[data.user];
-        io.sockets.emit('vpnDisconnect', data);
+        io.sockets.emit('vpnDisconnect', data.user);
       } else {
         connectionsInUse[data.user] = data.index;
-        io.sockets.emit('vpnConnect', data);
+        io.sockets.emit('vpnConnect', data.user);
       }
       console.log(connectionsInUse);
     } catch (err) {
@@ -23,9 +25,18 @@ io.on('connection', (socket) => {
   });
 
   // Initial connection.
-  socket.emit('init', 'test');
+  socket.emit('init', {
+    users: connectionsInUse
+  });
 });
 
 app.use(express.static(__dirname + '/client/build/'));
+
+app.get('/api/currentUsers', (req, res, next) => {
+  return res.send({
+    users: connectionsInUse
+  });
+});
+
 server.listen(3000);
 

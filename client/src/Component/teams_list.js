@@ -11,43 +11,58 @@ import font from '../App.css'
 
 
 let number = 0;
-const data = [
-  {
-    "0": "Danielle",
-    "1": "Ali",
-    "2": "Zeefa",
-    "3": "Leo",
-    "4": "Vikas",
-    "5": "Ariel",
-    "6": "Matt",
-    "7": "Wenbo",
-    "8": "Ben",
-    "9": "Pushpak",
-    "10": "Amy",
-    "11": "Nina",
-    "12": "Krish",
-    "13": "Arisha",
-    "14": "Richard",
-    "15": "Max",
-    "16": "Andrej",
-    "17": "Dhruv",
-    "18": "Ron",
-    "19": "Brenton",
-    "20": "Jake",
-    "21": "",
-    "22": "",
-    "23": "",
-    "24": "",
-  },
-];
+const data =
+{
+  "0": "Danielle",
+  "1": "Ali",
+  "2": "Zeefa",
+  "3": "Leo",
+  "4": "Vikas",
+  "5": "Ariel",
+  "6": "Matt",
+  "7": "Wenbo",
+  "8": "Ben",
+  "9": "Pushpak",
+  "10": "Amy",
+  "11": "Nina",
+  "12": "Krish",
+  "13": "Arisha",
+  "14": "Richard",
+  "15": "Max",
+  "16": "Andrej",
+  "17": "Dhruv",
+  "18": "Ron",
+  "19": "Brenton",
+  "20": "Jake",
+  "21": "",
+  "22": "",
+  "23": "",
+  "24": "",
+};
 
-class  Team extends PureComponent{
+class  Team extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      teamList: props.teamList,
+      currentlyConnected: props.currentlyConnected
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps) {
+    console.log('***');
+    console.log(nextProps);
+    return {
+      teamList: nextProps.teamList,
+      currentlyConnected: nextProps.currentlyConnected
+    };
+  }
     
  Handler = (name, value) => {
     console.log(`the handler funciotn invoked with ${value}`);
 
     number = `${value}`
-    this.props.using(number, data[0][name], name)
+    this.props.using(number, data[name], name)
     
     };
 
@@ -72,16 +87,13 @@ class  Team extends PureComponent{
       
   </Card.Body>
   <ListGroup className="list-group-flush" >
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.one]} </h4> <Toggle Handler = {this.Handler.bind(this, this.props.one)}/></ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.two]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.two)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.three]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.three)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.four]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.four)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.five]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.five)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.six]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.six)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.seven]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.seven)}/> </ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.eight]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.eight)}/></ListGroup.Item>})}
-    {data.map(item => { return <ListGroup.Item ><h4>{item [this.props.nine]}</h4><Toggle Handler = {this.Handler.bind(this, this.props.nine)}/> </ListGroup.Item>})}
-
+            {
+              this.state.teamList.map((userIndex) => {
+                return (
+                  <ListGroup.Item ><h4>{data[userIndex]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userIndex])} Handler={this.Handler.bind(this, userIndex)} /></ListGroup.Item>
+                );
+              })
+            }
     {/* <ListGroup.Item > {data[0]}<Toggle/> </ListGroup.Item> */}
     
     

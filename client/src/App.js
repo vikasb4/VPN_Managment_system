@@ -14,22 +14,39 @@ class App extends React.Component {
    
     super(props);
     this.state = {
-      count:0
+      count:0,
+      currentConnections: []
     };
   }
 
   componentDidMount() {
     socket = io();
-    socket.on('init', () => {
+    socket.on('init', (data) => {
       console.log('init');
+      const connectedUsers = [];
+      for (let user in data.users) {
+        connectedUsers.push(user);
+      }
+      this.setState({
+        currentConnections: connectedUsers
+      });
+      console.log(this.state);
     });
     socket.on('vpnConnect', (data) => {
       console.log('Connected');
       console.log(data);
+      const connections = this.state.currentConnections.concat([data]);
+      this.setState({
+        currentConnections: connections
+      });
     });
     socket.on('vpnDisconnect', (data) => {
       console.log('Diconnected');
       console.log(data);
+      const connections = this.state.currentConnections.filter(_ => _ != data);
+      this.setState({
+        currentConnections: connections
+      });
     });
   }
 
@@ -65,13 +82,13 @@ class App extends React.Component {
 
   <div className="row" align = "center">
     
-  <div className="column"><Team name ="Pirates of KDC" time = "10 AM"  one = "0" two ="1" three ="2" four ="3" five ="4" six ="5" seven ="6" eight ="7" nine ="8" using = {this.using}/></div>
+  <div className="column"><Team name ="Pirates of KDC" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} currentlyConnected={this.state.currentConnections} using = {this.using}/></div>
   
-  <div className="column">  <Team name ="Pest CTRL" time = "12 AM" one = "9" two ="10" three ="11" four ="12" five ="13" six ="14" seven ="15" eight ="16" nine ="17" using = {this.using}/></div>
+        {/* <div className="column">  <Team name="Pest CTRL" time="12 AM" teamList={[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]} currentlyConnected={this.state.currentConnections} using = {this.using}/></div> */}
   
-  <div className="column">  <Team name ="TAP" time = "1 PM" using = {this.using} /></div>
+  {/* <div className="column">  <Team name ="TAP" time = "1 PM" using = {this.using} /></div> */}
   
-  <div className="column">  <Team name ="Dinosty" time = "3 PM" using = {this.using}/></div>
+  {/* <div className="column">  <Team name ="Dinosty" time = "3 PM" using = {this.using}/></div> */}
   </div>
 
   </div>
