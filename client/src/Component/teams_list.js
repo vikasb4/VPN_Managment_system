@@ -13,31 +13,44 @@ import font from '../App.css'
 let number = 0;
 const data =
 {
-  "0": "Danielle",
-  "1": "Ali",
-  "2": "Zeefa",
-  "3": "Leo",
-  "4": "Vikas",
-  "5": "Ariel",
-  "6": "Matt",
-  "7": "Wenbo",
-  "8": "Ben",
-  "9": "Pushpak",
-  "10": "Amy",
-  "11": "Nina",
-  "12": "Krish",
-  "13": "Arisha",
-  "14": "Richard",
-  "15": "Max",
-  "16": "Andrej",
-  "17": "Dhruv",
-  "18": "Ron",
-  "19": "Brenton",
-  "20": "Jake",
-  "21": "",
-  "22": "",
-  "23": "",
-  "24": "",
+  "0": "Rob D",
+  "1": "John T",
+  "2": "Balan S",
+  "3": "Andrew F",
+  "4": "Jon D",
+  "5": "Richard H",
+  "6": "Gary D",
+  "7": "Mike S",
+  "8": "Nikolas P",
+  "9": "Morgenne B",
+  "10": "Jeevan J",
+  "100": "Leo H",
+  "101": "Zeefa K",
+  "102": "Vikas V",
+  "103": "Pushpak K",
+  "104": "Reenee H",
+  "201": "Kreishanth R",
+  "202": "Yifei Z",
+  "203": "Richard F",
+  "204": "Alex W",
+  "205": "Abdisalan A",
+  "206": "Mathhew G",
+  "207": "Brenton F",
+  "208": "Wenbo H",
+  "209": "Amy B",
+  "210": "Francis S",
+  "211": "Arshia M",
+  "212": "Ben F",
+  "213": "Nina Y",
+  "214": "Ariel S",
+  "215": "Yilun B",
+  "216": "Max B",
+  "217": "Dhruv J",
+  "218": "Ali S",
+  "219": "Jake V",
+  "220": "Andrzej S",
+  "221": "Danielle K",
+  "222": "Danielle K"
 };
 
 class  Team extends React.Component{
@@ -62,8 +75,8 @@ class  Team extends React.Component{
     };
   }
 
-  getTimerValue(userIndex) {
-    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userIndex]);
+  getTimerValue(userId) {
+    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userId]);
     if (currentTimeUsed) {
       return currentTimeUsed.time;
     } else {
@@ -72,7 +85,7 @@ class  Team extends React.Component{
   }
     
  Handler = (name, value) => {
-    console.log(`the handler funciotn invoked with ${value}`);
+    // console.log(`the handler funciotn invoked with ${value}`);
 
     number = `${value}`
     this.props.using(number, data[name], name)
@@ -101,9 +114,15 @@ class  Team extends React.Component{
   </Card.Body>
   <ListGroup className="list-group-flush" >
             {
-              this.state.teamList.map((userIndex) => {
+              this.state.teamList.sort((a, b) => {
+                if (data[a] < data[b]) {
+                  return -1;
+                } else {
+                  return 1;
+                }
+              }).map((userId) => {
                 return (
-                  <ListGroup.Item ><h4>{data[userIndex]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userIndex])} time={this.getTimerValue(userIndex)} Handler={this.Handler.bind(this, userIndex)} /></ListGroup.Item>
+                  <ListGroup.Item ><h4>{data[userId]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userId])} time={this.getTimerValue(userId)} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
                 );
               })
             }
@@ -111,12 +130,6 @@ class  Team extends React.Component{
     
     
   </ListGroup>
-  <Card.Body>
-      <Button>Need VPN for Emergency </Button>
-    {/* <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link> */}
-   
-  </Card.Body>
 </Card>
 
        </div>

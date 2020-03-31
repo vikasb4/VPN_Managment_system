@@ -26,9 +26,9 @@ class Toggle extends PureComponent {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('---');
-    console.log(nextProps);
-    console.log(prevState);
+    // console.log('---');
+    // console.log(nextProps);
+    // console.log(prevState);
     if (nextProps.toggled && !prevState.checked) {
       return {
         checked: nextProps.toggled,
@@ -44,13 +44,13 @@ class Toggle extends PureComponent {
   }
  
   handleChange(checked) {
-    console.log(this.state);
+    // console.log(this.state);
     this.setState({ checked});
     this.props.Handler(value);
 
   }
   resetTimer(checked) {
-    console.log("timerend")
+    // console.log("timerend")
     if (value>0)
     {
     value = value -1;
@@ -58,7 +58,7 @@ class Toggle extends PureComponent {
     else{
       
     }
-    console.log(value)
+    // console.log(value)
     clearInterval(this.timer)
     this.timer = null;
     // this.setState({checked :false,isOn: false,value:value})
@@ -68,15 +68,15 @@ class Toggle extends PureComponent {
     // }), 1); 
   }
   starttimer(checked) {
-    console.log("time Started")
+    // console.log("time Started")
     value = value + 1;
-    console.log(value);
+    // console.log(value);
     this.setState({
       start: Date.now(),
       value: value
     });
     this.timer = setInterval(() => {
-      console.log(this.state.timerValue);
+      // console.log(this.state.timerValue);
       this.setState({
         timerValue: Date.now() - this.state.start + this.state.time
       });
@@ -84,7 +84,7 @@ class Toggle extends PureComponent {
   }
 
   getTimePassed() {
-    console.log('getTimePassed running');
+    // console.log('getTimePassed running');
     setTimeout(() => {
       this.setState({
         dummy: this.state.dummy + 1
