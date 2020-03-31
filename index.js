@@ -13,9 +13,17 @@ function scheduleReset() {
     resetPromise = new Promise((resolve) => {
       const now = new Date();
       // Reset at midnight
-      let resetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0) - now;
-      if (resetDate < 0) {
-        resetDate += 24 * 60 * 60 * 1000;
+      const resetHour = Number(process.env.RESET_HOUR) || 0;
+      const resetMinute = Number(process.env.RESET_MINUTE) || 0;
+      const resetSecond = Number(process.env.RESET_MINUTE) || 0;
+      let resetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), resetHour, resetMinute, resetSecond, 0);
+      let h = resetDate.getHours() < 10 ? '0' + resetDate.getHours() : resetDate.getHours();
+      let m = resetDate.getMinutes() < 10 ? '0' + resetDate.getMinutes() : resetDate.getMinutes();
+      let s = resetDate.getSeconds() < 10 ? '0' + resetDate.getSeconds(): resetDate.getSeconds();
+      console.log('Scheduling reset for ' + h + ':' + m + ':' + s);
+      resetInMs = resetDate - now;
+      if (resetInMs < 0) {
+        resetInMs += 24 * 60 * 60 * 1000;
       }
       setTimeout(() => {
         console.log('Resetting daily values');
@@ -26,7 +34,7 @@ function scheduleReset() {
         dailyTimeUsed = {};
         resolve();
         scheduleReset();
-      }, resetDate);
+      }, resetInMs);
     });
   }
   return resetPromise;
