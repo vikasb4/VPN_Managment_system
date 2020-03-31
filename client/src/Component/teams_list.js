@@ -29,6 +29,7 @@ const data =
   "102": "Vikas V",
   "103": "Pushpak K",
   "104": "Reenee H",
+  "200": "Ron M",
   "201": "Kreishanth R",
   "202": "Yifei Z",
   "203": "Richard F",
@@ -49,8 +50,7 @@ const data =
   "218": "Ali S",
   "219": "Jake V",
   "220": "Andrzej S",
-  "221": "Danielle K",
-  "222": "Danielle K"
+  "221": "Danielle K"
 };
 
 class  Team extends React.Component{
@@ -122,7 +122,7 @@ class  Team extends React.Component{
                 }
               }).map((userId) => {
                 return (
-                  <ListGroup.Item ><h4>{data[userId]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userId])} time={this.getTimerValue(userId)} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
+                  <ListGroup.Item ><h4>{data[userId]} </h4> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
                 );
               })
             }

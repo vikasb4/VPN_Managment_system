@@ -6,13 +6,14 @@ let value = 0;
 class Toggle extends PureComponent {
   
   constructor(props) {
+    // console.log('$$$');
     // console.log(props);
     super(props);
     this.state = {
       checked: props.toggled,
       time: props.time,
       isOn: false,
-      start: props.toggled ? Date.now() : 0,
+      start: props.start,
       value: 0,
       timerValue: props.time,
       timer: null,
@@ -29,18 +30,11 @@ class Toggle extends PureComponent {
     // console.log('---');
     // console.log(nextProps);
     // console.log(prevState);
-    if (nextProps.toggled && !prevState.checked) {
-      return {
-        checked: nextProps.toggled,
-        time: nextProps.time,
-        start: Date.now()
-      };
-    } else {
-      return {
-        checked: nextProps.toggled,
-        time: nextProps.time
-      };
-    }
+    return {
+      checked: nextProps.toggled,
+      time: nextProps.time,
+      start: nextProps.start,
+    };
   }
  
   handleChange(checked) {
@@ -90,18 +84,18 @@ class Toggle extends PureComponent {
         dummy: this.state.dummy + 1
       });
     }, 1);
-    return Date.now() - this.state.start;
+    return new Date() - new Date(this.state.start);
   }
 
   render() {
     return (
-      
+
       <div>
-       <Switch onChange={this.handleChange}  checked={this.state.checked} />
-    <b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b>
-      
-      </div> 
-     
+        <Switch onChange={this.handleChange} checked={this.state.checked} />
+        <b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b>
+
+      </div>
+
     );
   }
 }

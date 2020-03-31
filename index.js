@@ -24,7 +24,8 @@ io.on('connection', (socket) => {
         connectionsInUse[data.user] = new Date();
         io.sockets.emit('vpnConnect', {
           user: data.user,
-          timeUsed: dailyTimeUsed[data.user]
+          timeUsed: dailyTimeUsed[data.user],
+          start: connectionsInUse[data.user]
         });
       }
       console.log(connectionsInUse);
@@ -49,5 +50,5 @@ app.get('/api/currentUsers', (req, res, next) => {
   });
 });
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 

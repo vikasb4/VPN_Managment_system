@@ -23,10 +23,14 @@ class App extends React.Component {
   componentDidMount() {
     socket = io();
     socket.on('init', (data) => {
-      console.log('init');
+      // console.log('init');
+      // console.log(data);
       const connectedUsers = [];
       for (let user in data.users) {
-        connectedUsers.push(user);
+        connectedUsers.push({
+          name: user,
+          connectedSince: data.users[user]
+        });
       }
       const timeUsed = [];
       for (let user in data.timeUsed) {
@@ -39,12 +43,15 @@ class App extends React.Component {
         currentConnections: connectedUsers,
         timeUsed: timeUsed
       });
-      console.log(this.state);
+      // console.log(this.state);
     });
     socket.on('vpnConnect', (data) => {
-      console.log('Connected');
-      console.log(data);
-      const connections = this.state.currentConnections.concat([data.user]);
+      // console.log('Connected');
+      // console.log(data);
+      const connections = this.state.currentConnections.concat([{
+        name: data.user,
+        connectedSince: data.start
+      }]);
       const timeUsed = this.state.timeUsed.find(_ => _.name === data.user) != null ? this.state.timeUsed.map((tu) => {
         if (tu.name === data.user) {
           return {
@@ -62,11 +69,12 @@ class App extends React.Component {
         currentConnections: connections,
         timeUsed: timeUsed
       });
+      // console.log(this.state);
     });
     socket.on('vpnDisconnect', (data) => {
-      console.log('Diconnected');
-      console.log(data);
-      const connections = this.state.currentConnections.filter(_ => _ != data.user);
+      // console.log('Diconnected');
+      // console.log(data);
+      const connections = this.state.currentConnections.filter(_ => _.name != data.user);
       const timeUsed = this.state.timeUsed.find(_ => _.name === data.user) != null ? this.state.timeUsed.map((tu) => {
         if (tu.name === data.user) {
           return {
@@ -84,11 +92,12 @@ class App extends React.Component {
         currentConnections: connections,
         timeUsed: timeUsed
       });
+      // console.log(this.state);
     });
   }
 
   using = (number, name, index) => {
-    console.log(`the number ${number}`);
+    // console.log(`the number ${number}`);
     if (socket) {
       socket.emit('request', { user: name, index: index });
     }
@@ -118,14 +127,14 @@ class App extends React.Component {
 
 
           <div className="row" align="center">
+            <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
-            <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
+            {/* <div className="column"><Team name="Priority 1" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
-            <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
+            {/* <div className="column">  <Team name="Priority 2" teamList={[100, 101, 102, 103, 104]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
-            <div className="column">  <Team name="Priority 3" teamList={[200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using} /></div>
+            {/* <div className="column">  <Team name="Priority 3" teamList={[200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using} /></div> */}
 
-            {/* <div className="column">  <Team name ="Dinosty" time = "3 PM" using = {this.using}/></div> */}
           </div>
         </div>
       );
