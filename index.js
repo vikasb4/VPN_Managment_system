@@ -15,7 +15,7 @@ function scheduleReset() {
       // Reset at midnight
       const resetHour = Number(process.env.RESET_HOUR) || 0;
       const resetMinute = Number(process.env.RESET_MINUTE) || 0;
-      const resetSecond = Number(process.env.RESET_MINUTE) || 0;
+      const resetSecond = Number(process.env.RESET_SECOND) || 0;
       let resetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), resetHour, resetMinute, resetSecond, 0);
       let h = resetDate.getHours() < 10 ? '0' + resetDate.getHours() : resetDate.getHours();
       let m = resetDate.getMinutes() < 10 ? '0' + resetDate.getMinutes() : resetDate.getMinutes();
