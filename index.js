@@ -3,22 +3,32 @@ var app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-let connectionsInUse = {
-  Danielle: 0
-};
+let dailyTimeUsed = {};
+let connectionsInUse = {};
 
 io.on('connection', (socket) => {
   // Socket listener.
   socket.on('request', (data) => {
     try {
       if (connectionsInUse[data.user] != null) {
+        // Disconnect
+        dailyTimeUsed[data.user] += new Date() - connectionsInUse[data.user];
         delete connectionsInUse[data.user];
-        io.sockets.emit('vpnDisconnect', data.user);
+        io.sockets.emit('vpnDisconnect', {
+          user: data.user,
+          timeUsed: dailyTimeUsed[data.user]
+        });
       } else {
-        connectionsInUse[data.user] = data.index;
-        io.sockets.emit('vpnConnect', data.user);
+        // Connect
+        dailyTimeUsed[data.user] = dailyTimeUsed[data.user] || 0;
+        connectionsInUse[data.user] = new Date();
+        io.sockets.emit('vpnConnect', {
+          user: data.user,
+          timeUsed: dailyTimeUsed[data.user]
+        });
       }
       console.log(connectionsInUse);
+      console.log(dailyTimeUsed);
     } catch (err) {
       console.log("Failed to update");
     }
@@ -26,7 +36,8 @@ io.on('connection', (socket) => {
 
   // Initial connection.
   socket.emit('init', {
-    users: connectionsInUse
+    users: connectionsInUse,
+    timeUsed: dailyTimeUsed
   });
 });
 

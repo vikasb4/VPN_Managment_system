@@ -6,37 +6,46 @@ let value = 0;
 class Toggle extends PureComponent {
   
   constructor(props) {
-    console.log(props);
+    // console.log(props);
     super(props);
     this.state = {
       checked: props.toggled,
-      time: 0,
+      time: props.time,
       isOn: false,
-      start: 0,
-      value: 0
+      start: props.toggled ? Date.now() : 0,
+      value: 0,
+      timerValue: props.time,
+      timer: null,
+      dummy: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.starttimer = this.starttimer.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
+    this.getTimePassed = this.getTimePassed.bind(this)
    
   }
 
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, prevState) {
     console.log('---');
     console.log(nextProps);
-    return {
-      checked: nextProps.toggled
-    };
+    console.log(prevState);
+    if (nextProps.toggled && !prevState.checked) {
+      return {
+        checked: nextProps.toggled,
+        time: nextProps.time,
+        start: Date.now()
+      };
+    } else {
+      return {
+        checked: nextProps.toggled,
+        time: nextProps.time
+      };
+    }
   }
  
   handleChange(checked) {
+    console.log(this.state);
     this.setState({ checked});
-    if(this.state.checked==true && this.state.isOn==false) {
-      this.starttimer();
-    }
-    else(
-      this.resetTimer()
-    )
     this.props.Handler(value);
 
   }
@@ -51,35 +60,45 @@ class Toggle extends PureComponent {
     }
     console.log(value)
     clearInterval(this.timer)
-    this.setState({checked :false,isOn: false,value:value})
+    this.timer = null;
+    // this.setState({checked :false,isOn: false,value:value})
     // this.setState({checked :false , time: this.state.time,isOn: false})
     // this.timer = setInterval(() => this.setState({
     //   time: 0
     // }), 1); 
   }
-  starttimer(checked){
+  starttimer(checked) {
     console.log("time Started")
-    if(value==value)
-     value = value+1;
-     console.log(value)
+    value = value + 1;
+    console.log(value);
+    this.setState({
+      start: Date.now(),
+      value: value
+    });
+    this.timer = setInterval(() => {
+      console.log(this.state.timerValue);
       this.setState({
-        checked:true,
-        time: this.state.time,
-        start: Date.now() - this.state.time,
-        isOn: true,
-        value:value
-      })
-      this.timer = setInterval(() => this.setState({
-        time: Date.now() - this.state.start
-      }), 1); 
-    }
+        timerValue: Date.now() - this.state.start + this.state.time
+      });
+    }, 1);
+  }
+
+  getTimePassed() {
+    console.log('getTimePassed running');
+    setTimeout(() => {
+      this.setState({
+        dummy: this.state.dummy + 1
+      });
+    }, 1);
+    return Date.now() - this.state.start;
+  }
+
   render() {
-    let value1 = 2
     return (
       
       <div>
        <Switch onChange={this.handleChange}  checked={this.state.checked} />
-    <b> {ms(this.state.time)}</b>
+    <b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b>
       
       </div> 
      

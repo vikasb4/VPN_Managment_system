@@ -15,7 +15,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       count:0,
-      currentConnections: []
+      currentConnections: [],
+      timeUsed: []
     };
   }
 
@@ -27,25 +28,61 @@ class App extends React.Component {
       for (let user in data.users) {
         connectedUsers.push(user);
       }
+      const timeUsed = [];
+      for (let user in data.timeUsed) {
+        timeUsed.push({
+          name: user,
+          time: data.timeUsed[user]
+        });
+      }
       this.setState({
-        currentConnections: connectedUsers
+        currentConnections: connectedUsers,
+        timeUsed: timeUsed
       });
       console.log(this.state);
     });
     socket.on('vpnConnect', (data) => {
       console.log('Connected');
       console.log(data);
-      const connections = this.state.currentConnections.concat([data]);
+      const connections = this.state.currentConnections.concat([data.user]);
+      const timeUsed = this.state.timeUsed.find(_ => _.name === data.user) != null ? this.state.timeUsed.map((tu) => {
+        if (tu.name === data.user) {
+          return {
+            name: data.user,
+            time: data.timeUsed
+          };
+        } else {
+          return tu;
+        }
+      }) : this.state.timeUsed.concat([{
+        name: data.user,
+        time: data.timeUsed
+      }]);
       this.setState({
-        currentConnections: connections
+        currentConnections: connections,
+        timeUsed: timeUsed
       });
     });
     socket.on('vpnDisconnect', (data) => {
       console.log('Diconnected');
       console.log(data);
-      const connections = this.state.currentConnections.filter(_ => _ != data);
+      const connections = this.state.currentConnections.filter(_ => _ != data.user);
+      const timeUsed = this.state.timeUsed.find(_ => _.name === data.user) != null ? this.state.timeUsed.map((tu) => {
+        if (tu.name === data.user) {
+          return {
+            name: data.user,
+            time: data.timeUsed
+          };
+        } else {
+          return tu;
+        }
+      }) : this.state.timeUsed.concat([{
+        name: data.user,
+        time: data.timeUsed
+      }]);
       this.setState({
-        currentConnections: connections
+        currentConnections: connections,
+        timeUsed: timeUsed
       });
     });
   }
@@ -82,7 +119,7 @@ class App extends React.Component {
 
   <div className="row" align = "center">
     
-  <div className="column"><Team name ="Pirates of KDC" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} currentlyConnected={this.state.currentConnections} using = {this.using}/></div>
+  <div className="column"><Team name ="Pirates of KDC" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using = {this.using}/></div>
   
         {/* <div className="column">  <Team name="Pest CTRL" time="12 AM" teamList={[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]} currentlyConnected={this.state.currentConnections} using = {this.using}/></div> */}
   

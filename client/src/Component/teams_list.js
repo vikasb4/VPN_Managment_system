@@ -45,17 +45,30 @@ class  Team extends React.Component{
     super(props);
     this.state = {
       teamList: props.teamList,
-      currentlyConnected: props.currentlyConnected
+      currentlyConnected: props.currentlyConnected,
+      timeUsed: props.timeUsed
     };
+
+    this.getTimerValue = this.getTimerValue.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps) {
-    console.log('***');
-    console.log(nextProps);
+    // console.log('***');
+    // console.log(nextProps);
     return {
       teamList: nextProps.teamList,
-      currentlyConnected: nextProps.currentlyConnected
+      currentlyConnected: nextProps.currentlyConnected,
+      timeUsed: nextProps.timeUsed
     };
+  }
+
+  getTimerValue(userIndex) {
+    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userIndex]);
+    if (currentTimeUsed) {
+      return currentTimeUsed.time;
+    } else {
+      return 0;
+    }
   }
     
  Handler = (name, value) => {
@@ -90,7 +103,7 @@ class  Team extends React.Component{
             {
               this.state.teamList.map((userIndex) => {
                 return (
-                  <ListGroup.Item ><h4>{data[userIndex]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userIndex])} Handler={this.Handler.bind(this, userIndex)} /></ListGroup.Item>
+                  <ListGroup.Item ><h4>{data[userIndex]} </h4> <Toggle toggled={this.state.currentlyConnected.includes(data[userIndex])} time={this.getTimerValue(userIndex)} Handler={this.Handler.bind(this, userIndex)} /></ListGroup.Item>
                 );
               })
             }
