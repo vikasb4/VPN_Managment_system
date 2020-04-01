@@ -82,7 +82,7 @@ class Toggle extends PureComponent {
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     if (hours > 0) {
-      return hours + 'h ' + minutes + 'm';
+      return hours + 'h ' + (minutes % 60) + 'm';
     } else if (minutes > 0) {
       return minutes + 'm';
     } else if (seconds > 0) {
