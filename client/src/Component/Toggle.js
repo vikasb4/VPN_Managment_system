@@ -77,13 +77,28 @@ class Toggle extends PureComponent {
     }, 1);
   }
 
+  formatTime(timeInMilis) {
+    const seconds = Math.floor(timeInMilis / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    if (hours > 0) {
+      return hours + 'h ' + minutes + 'm';
+    } else if (minutes > 0) {
+      return minutes + 'm';
+    } else if (seconds > 0) {
+      return seconds + 's';
+    } else {
+      return '0s';
+    }
+  }
+
   getTimePassed() {
     // console.log('getTimePassed running');
     setTimeout(() => {
       this.setState({
-        dummy: this.state.dummy + 1
+        dummy: (this.state.dummy + 1) % 100
       });
-    }, 1);
+    }, 1000);
     return new Date() - new Date(this.state.start);
   }
 
@@ -92,7 +107,7 @@ class Toggle extends PureComponent {
 
       <div className = "Team " style={{ display: 'contents' }}>
         <Switch  onChange={this.handleChange} checked={this.state.checked} />
-       <div><b> {ms(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div>
+        <div><b> {this.formatTime(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div>
        </div>
        
 
