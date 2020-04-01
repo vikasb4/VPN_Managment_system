@@ -74,7 +74,7 @@ const data =
   "128": "Jeff G",
   "129": "Danielle K",
   "130": "Ali S",
-  "131": "Paula R",
+  
   "132": "Alan J",
   "133": "Tyler C",
   "134": "Michael A",
@@ -133,7 +133,7 @@ const data =
   "238": "Ashraf H",
   "239": "Steve M",
   "240": "James W",
-  "241": "Paul H",
+  
   "242": "Heather M",
   "243": "Shaheel A",
   "244": "Zankhana B",
