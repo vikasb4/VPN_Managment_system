@@ -51,7 +51,8 @@ class App extends React.Component {
       // console.log(data);
       const connections = this.state.currentConnections.concat([{
         name: data.user,
-        connectedSince: data.start
+        connectedSince: data.start,
+        
       }]);
       const timeUsed = this.state.timeUsed.find(_ => _.name === data.user) != null ? this.state.timeUsed.map((tu) => {
         if (tu.name === data.user) {
@@ -87,7 +88,8 @@ class App extends React.Component {
         }
       }) : this.state.timeUsed.concat([{
         name: data.user,
-        time: data.timeUsed
+        time: data.timeUsed,
+        
       }]);
       this.setState({
         currentConnections: connections,
@@ -97,10 +99,10 @@ class App extends React.Component {
     });
   }
 
-  using = (number, name, index) => {
+  using = (number, name, email) => {
     // console.log(`the number ${number}`);
     if (socket) {
-      socket.emit('request', { user: name, index: index });
+      socket.emit('request', { user: name, email:email });
     }
     count = `${number}`
       this.setState({
@@ -132,11 +134,11 @@ class App extends React.Component {
                                Priority 3 users must disconnect when the available number of VPN connections goes to or below 3
                                Those that have been on longest should disconnect first.**</b></p>
 
-
+      
           <div className="row" style={{justifyContent:'center'}}>
             {/* <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
-            <div className="column"><Team name="High" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,,18,19,20,21,22,23,24,25,26,27,28]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
+            <div className="column"><Team name="High" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,,18,19,20,21,22,23,24,25,26,27,28]} currentlyConnected={this.state.currentConnections} currentlyConnectedTo={this.state.currentConnections.length} timeUsed={this.state.timeUsed} using={this.using} /></div>
 
             <div className="column">  <Team name="Medium" teamList={[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 

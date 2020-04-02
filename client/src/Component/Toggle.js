@@ -38,8 +38,10 @@ class Toggle extends PureComponent {
   }
  
   handleChange(checked) {
-    // console.log(this.state);
+    
+ 
     this.setState({ checked});
+    
     this.props.Handler(value);
 
   }
@@ -82,7 +84,7 @@ class Toggle extends PureComponent {
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     if (hours > 0) {
-      return hours + 'h ' + (minutes % 60) + 'm';
+      return hours + 'h ' + (minutes % 60) + 'm'; 
     } else if (minutes > 0) {
       return minutes + 'm';
     } else if (seconds > 0) {
@@ -106,7 +108,7 @@ class Toggle extends PureComponent {
     return (
 
       <div className = "Team " style={{ display: 'contents' }}>
-        <Switch  onChange={this.handleChange} checked={this.state.checked} />
+        <Switch  onChange={this.handleChange}  checked={this.state.checked} />
         <div><b> {this.formatTime(this.state.checked ? this.getTimePassed() + this.state.time : this.state.time)}</b></div>
        </div>
        

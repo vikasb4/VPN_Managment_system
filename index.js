@@ -2,11 +2,17 @@ var express = require('express');
 var app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
+const xoauth2 = require('xoauth2');
+var nodemailer = require('nodemailer');
+require('dotenv').config();
 
 let dailyTimeUsed = {};
 let connectionsInUse = {};
 
+
 let resetPromise;
+
+
 
 function scheduleReset() {
   if (!resetPromise) {
@@ -48,8 +54,39 @@ function handleScheduledReset(socket) {
       socket.emit('init', {
         users: connectionsInUse,
         timeUsed: dailyTimeUsed
+
       });
       return handleScheduledReset(socket);
+    }
+  });
+}
+function sendEmail(email,status){
+
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+    auth: {
+      
+        user: process.env.EMAIL,
+        pass:process.env.PASSWORD
+      
+      
+    }
+  });
+  
+  let mailOptions = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: 'VPN Management Tool',
+    text: status
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
     }
   });
 }
@@ -61,14 +98,20 @@ io.on('connection', (socket) => {
   socket.on('request', (data) => {
     try {
       if (connectionsInUse[data.user] != null) {
+
         // Disconnect
+
         dailyTimeUsed[data.user] = dailyTimeUsed[data.user] != null ? dailyTimeUsed[data.user] + (new Date() - connectionsInUse[data.user]) : new Date() - connectionsInUse[data.user];
         delete connectionsInUse[data.user];
         io.sockets.emit('vpnDisconnect', {
           user: data.user,
           timeUsed: dailyTimeUsed[data.user]
         });
-      } else {
+        sendEmail( data.email,'You have been marked as disconnected from the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
+      } 
+      else {
+
+        
         // Connect
         dailyTimeUsed[data.user] = dailyTimeUsed[data.user] || 0;
         connectionsInUse[data.user] = new Date();
@@ -76,10 +119,14 @@ io.on('connection', (socket) => {
           user: data.user,
           timeUsed: dailyTimeUsed[data.user],
           start: connectionsInUse[data.user]
+          
         });
+        console.log(data)
+        sendEmail( data.email,'You have been marked as connected to the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
       }
       console.log(connectionsInUse);
-      console.log(dailyTimeUsed);
+      console.log(dailyTimeUsed)
+     
     } catch (err) {
       console.log("Failed to update");
     }

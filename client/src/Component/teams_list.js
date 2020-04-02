@@ -3,155 +3,154 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card} from "react-bootstrap";
 import {ListGroup} from "react-bootstrap";
 import {ListGroupItem} from "react-bootstrap";
-import {Button} from "react-bootstrap";
 // import data from "./data";
 import Toggle from './Toggle';
-import font from '../App.css'
+
 
 
 
 let number = 0;
 const data =
 {
-  "0": "Rob D",
-  "1": "John T",
-  "2": "Balan S",
-  "3": "Andrew F",
-  "4": "Jon D",
-  "5": "Richard H",
-  "6": "Gary D",
-  "7": "Mike S",
-  "8": "Sue T",
-  "9": "Allen Z",
-  "10": "Vrao P",
-  "11": "Shekin K",
-  "12": "Irene S",
-  "13": "Renee H",
-  "14": "Owen L",
-  "15": "Gary H",
-  "16": "Michelle L",
-  "17": "Rob M",
-  "18": "Ian R",
-  "19": "Linda N",
-  "20": "Souvik D",
-  "21": "Sudhakar K ",
-  "22": "Nelson F",
-  "23": "Walter V",
-  "24": "Nashid F",
-  "25": "Paula R",
-  "26": "Anthony R",
-  "27": "Azim S",
-  "28": "Marinela B",
+  "0": {name:"Rob D", email:"Rob_Dunollie@cooperators.ca "},
+  "1": {name:"John T",email:"John_Tessaro@cooperators.ca"},
+  "2": {name:"Balan S",email:"Balan_Sivanadian@cooperators.ca"},
+  "3": {name:"Andrew F",email:"Andrew_Faires@cooperators.ca"},
+  "4": {name:"Jon D",email:"Jon_Dearden@cooperators.ca"},
+  "5": {name:"Richard H",email:"Richard_Hayes@cooperators.ca"},
+  "6": {name:"Gary D",email:"Gary_Dhillon@cooperators.ca"},
+  "7": {name:"Mike S",email:"Mike_Stronach@cooperators.ca"},
+  "8": {name:"Sue T",email:"Sue_Try@cooperators.ca"},
+  "9": {name:"Allen Z",email:"Allen_Zhang@cooperators.ca"},
+  "10": {name:"Vrao P",email:"Vrao_Polavarapu@cooperators.ca"},
+  "11": {name:"Shekin K",email:"Shekin_Kandathil@cooperators.ca"},
+  "12": {name:"Irene S",email:"Irene_Scutcher@cooperators.ca"},
+  "13": {name:"Renee H",email:"Renee_Hadenko@cooperators.ca"},
+  "14": {name:"Owen L",email:"Owen_Li@cooperators.ca"},
+  "15": {name:"Gary H",email:"Gary_Hemstock@cooperators.ca"},
+  "16": {name:"Michelle L",email:"Michelle_Luu@cooperators.ca"},
+  "17": {name:"Rob M",email:"Rob_Morrison@cooperators.ca"},
+  "18": {name:"Ian R",email:"Ian_Richards@cooperators.ca"},
+  "19": {name:"Linda N",email:"Linda_Ngo@cooperators.ca"},
+  "20": {name:"Souvik D",email:"Souvik_Dutta@cooperators.ca"},
+  "21": {name:"Sudhakar K ",email:"Sudhakar_Kakileti@cooperators.ca "},
+  "22": {name:"Nelson F",email:"Nelson_Ferreira@cooperators.ca"},
+  "23": {name:"Walter V",email:"Walter_Vereecken@cooperators.ca"},
+  "24": {name:"Nashid F",email:"Nashid_Forbes@cooperators.ca"},
+  "25": {name:"Paula R",email:"Paula_Randall_Perkins@cooperators.ca"},
+  "26": {name:"Anthony R",email:"Anthony_Runstedler@cooperators.ca"},
+  "27": {name:"Azim S",email:"Azim_Saiyed@cooperators.ca"},
+  "28": {name:"Marinela B",email:"Marinela_Balazs@cooperators.ca"},
 
-  "100": "Ben F",
-  "101": "Nikolas P",
-  "102": "Morgenne B",
-  "103": "Jeevan J",
-  "104": "Leo H",
-  "105": "Zeefa K",
-  "106": "Vikas V",
-  "107": "Pushpak K",
-  "108": "Steve K",
-  "109": "Leila J",
-  "110": "Niki V",
-  "111": "Katrena M",
-  "112": "Ariel S",
-  "113": "Michelle C",
-  "114": "Yeri K",
-  "115": "Craig S",
-  "116": "Corey G",
-  "117": "Pranav T",
-  "118": "Luisa L",
-  "119": "Katherine M",
-  "120": "May M",
-  "121": "Adriana B",
-  "122": "Tatiana S",
-  "123": "Nikunj P",
-  "124": "Harkirat G",
-  "125": "Gagandeep K",
-  "126": "Charlie T",
-  "127": "Paul H",
-  "128": "Jeff G",
-  "129": "Danielle K",
-  "130": "Ali S",
-  "131": "Dimitri F",
+  "100": {name:"Ben F",email:"Ben_Finch@cooperators.ca"},
+  "101": {name:"Nikolas P",email:"Nikolas_Pursiainen@cooperators.ca"},
+  "102": {name:"Morgenne B",email:"Morgenne_Besenschek@cooperators.ca"},
+  "103": {name:"Jeevan J",email:"Jeevan_Jassal@cooperators.ca"},
+  "104": {name:"Leo H",email:"Leo_Heath@cooperators.ca"},
+  "105": {name:"Zeefa K",email:"Zeefa_Karim@cooperators.ca"},
+  "106": {name:"Vikas V",email:"Vikas_Vattikonda@cooperators.ca"},
+  "107": {name:"Pushpak K",email:"Pushpak_Kurella@cooperators.ca"},
+  "108": {name:"Steve K",email:"Steve_Kacheff@cooperators.ca"},
+  "109": {name:"Leila J",email:"Leila_Joshua@cooperators.ca"},
+  "110": {name:"Niki V",email:"Niki_Vegapaludi@cooperators.ca"},
+  "111": {name:"Katrena M",email:"Katrena_Macke@cooperators.ca"},
+  "112": {name:"Ariel S",email:"Ariel_Schwartz@cooperators.ca"},
+  "113": {name:"Michelle C",email:"Michelle_Caravaggio@cooperators.ca"},
+  "114": {name:"Yeri K",email:"Yeri_Kim@cooperators.ca"},
+  "115": {name:"Craig S",email:"Craig_Smith@cooperators.ca"},
+  "116": {name:"Corey G",email:"Corey_Guest@cooperators.ca"},
+  "117": {name:"Pranav T",email:"Pranav_Tyagi@cooperators.ca"},
+  "118": {name:"Luisa L",email:"Luisa_Lago@cooperators.ca"},
+  "119": {name:"Katherine M",email:"Katherine_Meyer@cooperators.ca"},
+  "120": {name:"May M",email:"May_May_So@cooperators.ca"},
+  "121": {name:"Adriana B",email:"Adriana_Banica@cooperators.ca"},
+  "122": {name:"Tatiana S",email:"Tatiana_Serguienko@cooperators.ca"},
+  "123": {name:"Nikunj P",email:"Nikunj_Patel@cooperators.ca"},
+  "124": {name:"Harkirat G",email:"Harkirat_Ghotra@cooperators.ca"},
+  "125": {name:"Gagandeep K",email:"Gagandeep_Kaur@cooperators.ca"},
+  "126": {name:"Charlie T",email:"Charlie_Teece@cooperators.ca"},
+  "127": {name:"Paul H",email:"Paul_Hoy@cooperators.ca"},
+  "128": {name:"Jeff G",email:"Jeff_Grimes@cooperators.ca"},
+  "129": {name:"Danielle K",email:"Danielle_Kacheff@cooperators.ca"},
+  "130": {name:"Ali S",email:"Ali_Sadri@cooperators.ca"},
+  "131": {name:"Dimitri F",email:"Dimitri_Frederick@cooperators.ca"},
   
-  "132": "Alan J",
-  "133": "Tyler C",
-  "134": "Michael A",
-  "135": "Patrick T",
-  "136": "Usman A",
-  "137": "Venkata V",
-  "138": "Ramandeep S ",
-  "139": "Monica T",
-  "140": "Shwinky S",
-  "141": "John Q",
-  "142": "Jared S",
-  "143": "Jordan F",
-  "144": "Andrew W",
-  "145": "Jakob B",
-  "146": "Jake J ",
-  "147": "",
+  "132": {name:"Alan J",email:"Alan_Judi@cooperators.ca"},
+  "133": {name:"Tyler C",email:"Tyler_Cote@cooperators.ca"},
+  "134": {name:"Michael A",email:"Michael_Aushana@cooperators.ca"},
+  "135": {name:"Patrick T",email:"Patrick_Telfer@cooperators.ca"},
+  "136": {name:"Usman A",email:"Usman_Arshad@cooperators.ca"},
+  "137": {name:"Venkata V",email:"Venkata_Vinjamuri@cooperators.ca"},
+  "138": {name:"Ramandeep S ",email:"Ramandeep_Singh@cooperators.ca"},
+  "139": {name:"Monica T",email:"Monica_Turrill@cooperators.ca"},
+  "140": {name:"Shwinky S",email:"Shwinky_Sood@cooperators.ca"},
+  "141": {name:"John Q",email:"John_Quinsay@cooperators.ca"},
+  "142": {name:"Jared S",email:"Jared_Saunders@cooperators.ca"},
+  "143": {name:"Jordan F",email:"Jordan_Forsyth@cooperators.ca"},
+  "144": {name:"Andrew W",email:"Andrew_Wighton@cooperators.ca"},
+  "145": {name:"Jakob B",email:"Jakob_Braga@cooperators.ca"},
+  "146": {name:"Jake J ",email:"Jake_Janzen@cooperators.ca"},
+  "147": {name:"",email:""},
 
-  "200": "Ron M",
-  "201": "Kreishanth R",
-  "202": "Yifei Z",
-  "203": "Richard F",
-  "204": "Alex W",
-  "205": "Abdisalan A",
-  "206": "Mathhew G",
-  "207": "Brenton F",
-  "208": "Wenbo H",
-  "209": "Amy B",
-  "210": "Francis S",
-  "211": "Arshia M",
+  "200": {name:"Ron M",email:"Ron_Mooibroek@cooperators.ca"},
+  "201": {name:"Kreishanth R",email:"Kreishanth_Raveindiraseelan@cooperators.ca"},
+  "202": {name:"Yifei Z",email:"Yifei_Zhang@cooperators.ca"},
+  "203":{name: "Richard F",email:"Richard_Fu@cooperators.ca"},
+  "204": {name:"Alex W",email:"Alex_Wong@cooperators.ca"},
+  "205": {name:"Abdisalan A",email:"Abdisalan_Abdi@cooperators.ca"},
+  "206": {name:"Mathhew G",email:"Matthew_Gottwald@cooperators.ca"},
+  "207": {name:"Brenton F",email:"Brenton_Fairless@cooperators.ca"},
+  "208": {name:"Wenbo H",email:"Wenbo_Han@cooperators.ca"},
+  "209": {name:"Amy B",email:"Amy_Barrett@cooperators.ca"},
+  "210":{name:"Francis S",email:"Francis_Sun@cooperators.ca"},
+  "211": {name:"Arshia M",email:"Arshia_Mathur@cooperators.ca"},
   
-  "213": "Nina Y",
-  "214": "Tim G",
-  "215": "Yilun B",
-  "216": "Max B",
-  "217": "Dhruv J",
-  "218": "Imran A",
-  "219": "Jake V",
-  "220": "Andrzej S",
-  "221": "Jeremy W",
+  "213": {name:"Nina Y",email:"Nina_Yang@cooperators.ca"},
+  "214": {name:"Tim G",email:"Tim_Gapakov@cooperators.ca"},
+  "215": {name:"Yilun B",email:"Yilun_Bai@cooperators.ca"},
+  "216": {name:"Max B",email:"Max_Barltrop@cooperators.ca"},
+  "217": {name:"Dhruv J",email:"Dhruv_Jain@cooperators.ca"},
+  "218": {name:"Imran A",email:"Imran_Arshid@cooperators.ca"},
+  "219": {name:"Jake V",email:"Jake_Verslype@cooperators.ca"},
+  "220": {name:"Andrzej S",email:"Andrzej_Sienkiewicz@cooperators.ca"},
+  "221": {name:"Jeremy W",email:"Jeremy_Weber@cooperators.ca"},
   
-  "223": "Ashleigh B",
-  "224": "Trisha B",
-  "225": "Suresh O",
-  "226": "Aruanva M",
-  "227": "Shibin P",
-  "228": "Cheng X",
-  "229": "Guy L",
-  "230": "Cindy R",
-  "231": "Suyog J",
-  "232": "Smitha P",
-  "233": "Guru I",
-  "234": "Denise B",
-  "235": "Lesley F",
-  "236": "Cheri D",
-  "237": "Amandeep P",
-  "238": "Ashraf H",
-  "239": "Steve M",
-  "240": "James W",
+  "223": {name:"Ashleigh B",email:"Ashleigh_Bogart@cooperators.ca"},
+  "224": {name:"Trisha B",email:"Trisha_Balkissoon@cooperators.ca"},
+  "225": {name:"Suresh O",email:"Suresh_Ommi@cooperators.ca"},
+  "226": {name:"Aruanva M",email:"Aruanva_Mandal@cooperators.ca"},
+  "227": {name:"Shibin P",email:"Shibin_Paravetty@cooperators.ca"},
+  "228": {name:"Cheng X",email:"Cheng_Xi@cooperators.ca"},
+  "229": {name:"Guy L",email:"Guy_Lauren@cooperators.ca"},
+  "230": {name:"Cindy R",email:"Cindy_Ramackers@cooperators.ca"},
+  "231": {name:"Suyog J",email:"Suyog_Joshi@cooperators.ca"},
+  "232": {name:"Smitha P",email:"Smitha_Prasad@cooperators.ca"},
+  "233": {name:"Guru I",email:"Guru_Inamdar@cooperators.ca"},
+  "234": {name:"Denise B",email:"Denise_Balkissoon@cooperators.ca"},
+  "235": {name:"Lesley F",email:"Lesley_Fairbairn@cooperators.ca"},
+  "236": {name:"Cheri D",email:"Cheri_Davidson@cooperators.ca"},
+  "237": {name:"Amandeep P",email:"Amandeep_Paul@cooperators.ca"},
+  "238": {name:"Ashraf H",email:"Ashraf_Haddad@cooperators.ca"},
+  "239": {name:"Steve M",email:"Steve_McPhee@cooperators.ca"},
+  "240": {name:"James W",email:"James_Wu@cooperators.ca"},
   
-  "242": "Heather M",
-  "243": "Shaheel A",
-  "244": "Zankhana B",
-  "245": "Nicole M",
-  "246": "Mariya C",
-  "247": "Martin F",
-  "248": "Mahavir S",
-  "249": "Gundeep V",
-  "250": "Kanwardeep G",
-  "251": "Srikanth T",
-  "252": "Naga P",
-  "253": "Raja B",
-  "254": "Jagjit G",
-  "255": "Subra S",
-  "256": "Stephanie C",
-  "257": "Nick P",
-  "258": "Adriana H"
+  "242": {name:"Heather M",email:"Heather_McKean@cooperators.ca"},
+  "243": {name:"Shaheel A",email:"Shaheel_Ali@cooperators.ca"},
+  "244": {name:"Zankhana B",email:"Zankhana_Bavishi@cooperators.ca"},
+  "245": {name:"Nicole M",email:"Nicole_MacLean@cooperators.ca"},
+  "246": {name:"Mariya C",email:"Mariya_Calcuttawala@cooperators.ca"},
+  "247": {name:"Martin F",email:"Martin_Fielding@cooperators.ca"},
+  "248": {name:"Mahavir S",email:"Mahavir_Sogarwal@cooperators.ca"},
+  "249": {name:"Gundeep V",email:"Gundeep_Vohra@cooperators.ca"},
+  "250": {name:"Kanwardeep G",email:"Kanwardeep_Gill@cooperators.ca"},
+  "251": {name:"Srikanth T",email:"Srikanth_Thota@cooperators.ca"},
+  "252": {name:"Naga P",email:"Naga_Penneru@cooperators.ca"},
+  "253": {name:"Raja B",email:"Raja_Boppana@cooperators.ca"},
+  "254": {name:"Jagjit G",email:"Jagjit_Gill@cooperators.ca"},
+  "255": {name:"Subra S",email:"Subra_Swarnan@cooperators.ca"},
+  "256": {name:"Stephanie C",email:"Stephanie_Crumb@cooperators.ca"},
+  "257": {name:"Nick P",email:"Nick_Petropoulos@cooperators.ca"},
+  "258": {name:"Adriana H",email:"Adriana_Horne@cooperators.ca"}
 
   
 };
@@ -179,7 +178,7 @@ class  Team extends React.Component{
   }
 
   getTimerValue(userId) {
-    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userId]);
+    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userId].name);
     if (currentTimeUsed) {
       return currentTimeUsed.time;
     } else {
@@ -187,11 +186,11 @@ class  Team extends React.Component{
     }
   }
     
- Handler = (name, value) => {
+ Handler = (Userid, value) => {
     // console.log(`the handler funciotn invoked with ${value}`);
 
     number = `${value}`
-    this.props.using(number, data[name], name)
+    this.props.using(number, data[Userid].name, data[Userid].email)
     
     };
 
@@ -209,6 +208,17 @@ class  Team extends React.Component{
   <Card.Body>
  
     <Card.Title ><b><h2>{this.props.name}</h2></b></Card.Title>
+    <Card.Title ><b><h3>Connected Users :{
+      this.state.teamList.map ((userId) => {
+        return this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null ? 1 : 0 ;
+      }).reduce((a,b) => {
+
+        return a+b ;
+
+      })
+      }</h3></b></Card.Title>
+    
+  
       
   <div >
   <ListGroup  >
@@ -221,7 +231,7 @@ class  Team extends React.Component{
                 }
               }).map((userId) => {
                 return (
-                  <ListGroup.Item style={{height: '5rem', padding: '0px'}}><label style={{fontSize: '2rem', marginBottom: '0px'}}>{data[userId]}</label> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId]) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId]).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
+                  <ListGroup.Item style={{height: '5rem', padding: '0px'}}><label style={{fontSize: '2rem', marginBottom: '0px'}}>{data[userId].name}</label> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId].name).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
                 );
               })
             }
