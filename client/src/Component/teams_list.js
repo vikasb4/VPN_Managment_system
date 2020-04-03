@@ -244,7 +244,7 @@ class  Team extends React.Component{
   <ListGroup  >
             {
               this.state.teamList.sort((a, b) => {
-                if (data[a] < data[b]) {
+                if (data[a].name  < data[b].name) {
                   return -1;
                 } else {
                   return 1;
