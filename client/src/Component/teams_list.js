@@ -125,7 +125,7 @@ const data =
   "220": {name:"Andrzej S",email:"Andrzej_Sienkiewicz@cooperators.ca"},
   "221": {name:"Jeremy W",email:"Jeremy_Weber@cooperators.ca"},
   
-  "223": {name:"Ashleigh B",email:"Ashleigh_Bogart@cooperators.ca"},
+  
   "224": {name:"Trisha B",email:"Trisha_Balkissoon@cooperators.ca"},
   "225": {name:"Suresh O",email:"Suresh_Ommi@cooperators.ca"},
   "226": {name:"Aruanva M",email:"Aruanva_Mandal@cooperators.ca"},
