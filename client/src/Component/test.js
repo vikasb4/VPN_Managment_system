@@ -1,15 +1,3 @@
-import React, { PureComponent } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Card} from "react-bootstrap";
-import {ListGroup} from "react-bootstrap";
-import {ListGroupItem} from "react-bootstrap";
-// import data from "./data";
-import Toggle from './Toggle';
-
-
-
-
-let number = 0;
 const data =
 {
   "0": {name:"Rob D", email:"Rob_Dunollie@cooperators.ca "},
@@ -101,7 +89,6 @@ const data =
   "150": {name:"Helene A",email:"Helene_Arbour@cooperators.ca"},
   "151": {name:"Kishan S",email:"Kishan_Sirivolu@cooperators.ca"},
   "152": {name:"Tri M",email:"Tri_Magpali@cooperators.ca"},
-  "153": {name:"Brenton F",email:"Brenton_Fairless@cooperators.ca"},
 
   "200": {name:"Ron M",email:"Ron_Mooibroek@cooperators.ca"},
   "201": {name:"Kreishanth R",email:"Kreishanth_Raveindiraseelan@cooperators.ca"},
@@ -110,7 +97,7 @@ const data =
   "204": {name:"Alex W",email:"Alex_Wong@cooperators.ca"},
   "205": {name:"Abdisalan A",email:"Abdisalan_Abdi@cooperators.ca"},
   "206": {name:"Mathhew G",email:"Matthew_Gottwald@cooperators.ca"},
-  "207": {name:"",email:""},
+  "207": {name:"Brenton F",email:"Brenton_Fairless@cooperators.ca"},
   "208": {name:"Wenbo H",email:"Wenbo_Han@cooperators.ca"},
   "209": {name:"Amy B",email:"Amy_Barrett@cooperators.ca"},
   "210":{name:"Francis S",email:"Francis_Sun@cooperators.ca"},
@@ -121,6 +108,7 @@ const data =
   "215": {name:"Yilun B",email:"Yilun_Bai@cooperators.ca"},
   "216": {name:"Max B",email:"Max_Barltrop@cooperators.ca"},
   "217": {name:"Dhruv J",email:"Dhruv_Jain@cooperators.ca"},
+  "218": {name:"Imran A",email:"Imran_Arshid@cooperators.ca"},
   "219": {name:"Jake V",email:"Jake_Verslype@cooperators.ca"},
   "220": {name:"Andrzej S",email:"Andrzej_Sienkiewicz@cooperators.ca"},
   "221": {name:"Jeremy W",email:"Jeremy_Weber@cooperators.ca"},
@@ -165,108 +153,33 @@ const data =
   "260": {name:"Imran A",email:"Imran_Arshid@cooperators.ca"},
   "261": {name:"Devaraj B",email:"Devaraj_Bojan@cooperators.ca"},
   "262": {name:"Kiran K",email:"Kiran_Kumar@cooperators.ca"},
+  "263": {name:"Gundeep V",email:"Gundeep_Vohra@cooperators.ca"},
   "264": {name:"Ravi K",email:"Ravi_Kambo@cooperators.ca"},
   "265": {name:"Ashleigh B",email:"Ashleigh_Bogart@cooperators.ca"},
   "266": {name:"Sue T",email:"Sue_Try@cooperators.ca"},
   "267": {name:"Allen Z",email:"Allen_Zhang@cooperators.ca"},
   "268": {name:"Vrao P",email:"Vrao_Polavarapu@cooperators.ca"},
-  "269": {name:"Irene S",email:"Irene_Scutcher@cooperators.ca"}
+  "269": {name:"Irene S",email:"Irene_Scutcher@cooperators.ca"},
+  "270": {name:"Suresh O",email:"Suresh_Ommi@cooperators.ca"}
+  
 
   
 };
+const high = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32];
+const medium = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152];
+const low = [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211,213, 214, 215, 216, 217, 218, 219, 220, 221,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,261,263,264,265,266,267,268,269,270];
 
-class  Team extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      teamList: props.teamList,
-      currentlyConnected: props.currentlyConnected,
-      timeUsed: props.timeUsed
-    };
-
-    this.getTimerValue = this.getTimerValue.bind(this);
-  }
-
-  static getDerivedStateFromProps(nextProps) {
-    // console.log('***');
-    // console.log(nextProps);
-    return {
-      teamList: nextProps.teamList,
-      currentlyConnected: nextProps.currentlyConnected,
-      timeUsed: nextProps.timeUsed
-    };
-  }
-
-  getTimerValue(userId) {
-    let currentTimeUsed = this.state.timeUsed.find(_ => _.name === data[userId].name);
-    if (currentTimeUsed) {
-      return currentTimeUsed.time;
-    } else {
-      return 0;
-    }
-  }
-    
- Handler = (Userid, value) => {
-    // console.log(`the handler funciotn invoked with ${value}`);
-
-    number = `${value}`
-    this.props.using(number, data[Userid].name, data[Userid].email)
-    
-    };
-
-    render(){  
-    //  const teamMemebers = this.props.team.map(function (value ,i){
-    //      return (
-    //         <p>value</p>
-    //      );
-    //  });
-    return (
-      <div className = "Team "  >
-       
-
-        <Card border="dark"  style={{ width: '25rem' }}>
-  <Card.Body>
- 
-    <Card.Title ><b><h2>{this.props.name}</h2></b></Card.Title>
-    <Card.Title ><b><h3>Connected Users:{
-      this.state.teamList.map ((userId) => {
-        return this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null ? 1 : 0 ;
-      }).reduce((a,b) => {
-
-        return a+b ;
-
-      })
-      }</h3></b></Card.Title>
-    
-  
-      
-  <div >
-  <ListGroup  >
-            {
-              this.state.teamList.sort((a, b) => {
-                if (data[a] < data[b]) {
-                  return -1;
-                } else {
-                  return 1;
-                }
-              }).map((userId) => {
-                return (
-                  <ListGroup.Item style={{height: '5rem', padding: '0px'}}><label style={{fontSize: '2rem', marginBottom: '0px'}}>{data[userId].name}</label> <Toggle toggled={this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null} time={this.getTimerValue(userId)} start={this.state.currentlyConnected.find(_ => _.name === data[userId].name) != null ? this.state.currentlyConnected.find(_ => _.name === data[userId].name).connectedSince : 0} Handler={this.Handler.bind(this, userId)} /></ListGroup.Item>
-                );
-              })
-            }
-    {/* <ListGroup.Item > {data[0]}<Toggle/> </ListGroup.Item> */}
-    
-    
-  </ListGroup>
-  </div>
-  </Card.Body>
-</Card>
-
-       </div>
-    );
+function checkDuplicate(array, ele, index) {
+  const duplicate = array.indexOf(ele) !== index;
+  if (duplicate) {
+    console.log(ele + ' is duplicated');
   }
 }
-  
-  export default Team;
-  
+high.forEach(checkDuplicate.bind(null, high));
+medium.forEach(checkDuplicate.bind(null, medium));
+low.forEach(checkDuplicate.bind(null, low));
+const names = [];
+for (let id in data) {
+  names.push(data[id]);
+}
+names.forEach(checkDuplicate.bind(null, names));
