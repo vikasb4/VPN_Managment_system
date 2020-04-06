@@ -138,7 +138,7 @@ class App extends React.Component {
           <div className="row" style={{justifyContent:'center'}}>
             {/* <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
-            <div className="column"><Team name="High" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]} currentlyConnected={this.state.currentConnections}  timeUsed={this.state.timeUsed} using={this.using} /></div>
+            <div className="column"><Team name="High" teamList={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]} currentlyConnected={this.state.currentConnections}  timeUsed={this.state.timeUsed} using={this.using} /></div>
 
             <div className="column">  <Team name="Medium" teamList={[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div>
 

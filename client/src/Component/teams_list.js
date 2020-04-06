@@ -21,7 +21,8 @@ const data =
   "6": {name:"Gary D",email:"Gary_Dhillon@cooperators.ca"},
   "7": {name:"Mike S",email:"Mike_Stronach@cooperators.ca"},
   "8": {name:"Sue T",email:"Sue_Try@cooperators.ca"},
-  "9": {name:"Allen Z",email:"Allen_Zhang@cooperators.ca"},
+  "9": {name:"Nashid F",email:"Nashid_Forbes@cooperators.ca"},
+
   "10": {name:"Vrao P",email:"Vrao_Polavarapu@cooperators.ca"},
   "11": {name:"Shekin K",email:"Shekin_Kandathil@cooperators.ca"},
   "12": {name:"Irene S",email:"Irene_Scutcher@cooperators.ca"},
