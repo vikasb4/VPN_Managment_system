@@ -126,7 +126,7 @@ class App extends React.Component {
           <div className="column">
           <div className = "row" style={{marginRight : '5px', marginLeft : '20px'}}>
           <h2>Total no. of VPNs in use: <label style={{color:'blue'}}>{this.state.currentConnections.length} </label></h2>
-          <h2 style={{marginLeft : 'auto'}}>Available  VPNs:<label style={{color:'red'}}>{67 - this.state.currentConnections.length}</label></h2>
+          <h2 style={{marginLeft : 'auto'}}>Available  VPNs:<label style={{color:'red'}}>{59 - this.state.currentConnections.length}</label></h2>
           </div>
           </div>
 

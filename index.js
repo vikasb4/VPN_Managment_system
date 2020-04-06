@@ -60,36 +60,36 @@ function handleScheduledReset(socket) {
     }
   });
 }
-function sendEmail(email,status){
+// function sendEmail(email,status){
 
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-    auth: {
+//   let transporter = nodemailer.createTransport({
+//     host: 'smtp.gmail.com',
+//       port: 465,
+//       secure: true,
+//     auth: {
       
-        user: process.env.EMAIL,
-        pass:process.env.PASSWORD
+//         user: process.env.EMAIL,
+//         pass:process.env.PASSWORD
       
       
-    }
-  });
+//     }
+//   });
   
-  let mailOptions = {
-    from: process.env.EMAIL,
-    to: email,
-    subject: 'VPN Management Tool',
-    text: status
-  };
+//   let mailOptions = {
+//     from: process.env.EMAIL,
+//     to: email,
+//     subject: 'VPN Management Tool',
+//     text: status
+//   };
   
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-}
+//   transporter.sendMail(mailOptions, function(error, info){
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log('Email sent: ' + info.response);
+//     }
+//   });
+// }
 
 io.on('connection', (socket) => {
   handleScheduledReset(socket);
@@ -107,7 +107,7 @@ io.on('connection', (socket) => {
           user: data.user,
           timeUsed: dailyTimeUsed[data.user]
         });
-        sendEmail( data.email,'You have been marked as disconnected from the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
+        // sendEmail( data.email,'You have been marked as disconnected from the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
       } 
       else {
 
@@ -122,7 +122,7 @@ io.on('connection', (socket) => {
           
         });
         console.log(data)
-        sendEmail( data.email,'You have been marked as connected to the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
+        // sendEmail( data.email,'You have been marked as connected to the VPN.Click on the link: https://vpn-management.azurewebsites.net/')
       }
       console.log(connectionsInUse);
       console.log(dailyTimeUsed)
