@@ -834,7 +834,7 @@ export default {
   "525": { name: "Dianna C", email: "  ", team: "CBS" },
   "600": { name: "Cheryl H", email: "  ", team: "CBS" },
   "601": { name: "Holly  C", email: "  ", team: "CBS" },
-  "602": { name: "Sue T", email: "  ", team: "CBS" },
+  "602": { name: "Sue TR", email: "  ", team: "CBS" },
   "603": { name: "Ashleigh B", email: "  ", team: "CBS" },
   "604": { name: "Vrao P", email: "  ", team: "CBS" },
   "605": { name: "Allen Z", email: "  ", team: "CBS" },
