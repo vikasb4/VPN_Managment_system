@@ -119,20 +119,21 @@ class App extends React.Component {
     selectTeam = (teamName, event) => {
       this.setState({selectedTeam: teamName});
     }
+    showAvailableVPNs = (allTeams, teamCurrentConnections)  => 
+      allTeams ? ' ' : <h2 style={{marginLeft : 'auto'}}>Available  VPNs:<label style={{color:'red'}}>{availableVPNTeams[this.state.selectedTeam] - teamCurrentConnections}</label></h2>
     showVPNInfo = () => {
-      if (this.state.selectedTeam !== 'All Teams'){
-        const teamCurrentConnections = this.state.currentConnections.filter(curUser => Object.values(usersData).find((_) => curUser.name === _.name).team === this.state.selectedTeam).length;
-        return (
-          <div className="column">
-          <div className = "row" style={{marginRight : '5px', marginLeft : '20px'}}>
-          <h2>Total no. of VPNs in use: <label style={{color:'blue'}}>{teamCurrentConnections}</label></h2>
-          <h2 style={{marginLeft : 'auto'}}>Available  VPNs:<label style={{color:'red'}}>{availableVPNTeams[this.state.selectedTeam] - teamCurrentConnections}</label></h2>
-          </div>
-          </div>
-        );
-      } else {
-        return null;
-      }
+      const allTeams = this.state.selectedTeam === 'All Teams';
+      const teamCurrentConnections = 
+      allTeams ? this.state.currentConnections.length :
+      this.state.currentConnections.filter(curUser => Object.values(usersData).find((_) => curUser.name === _.name).team === this.state.selectedTeam).length;
+      return (
+        <div className="column">
+        <div className = "row" style={{marginRight : '5px', marginLeft : '20px'}}>
+        <h2>Total no. of VPNs in use: <label style={{color:'blue'}}>{teamCurrentConnections}</label></h2>
+        {this.showAvailableVPNs(allTeams, teamCurrentConnections)}
+        </div>
+        </div>
+      );
     }
     render(){
      
@@ -143,19 +144,24 @@ class App extends React.Component {
 
 
         <div className="App" >
-          <h1>VPN MANAGEMENT TOOL </h1>
+          <div>
+            <h1 style={{ display:'inline-block'}}>VPN MANAGEMENT TOOL</h1>
+            <div style={{display:'inline-block', position:'absolute', right:'0'}}>
+              <DropdownButton id="dropdown-menu-align-right" title={this.state.selectedTeam}>
+                <Dropdown.Item eventKey='Team A' onSelect={this.selectTeam}>Team A</Dropdown.Item>
+                <Dropdown.Item eventKey='Team B' onSelect={this.selectTeam}>Team B</Dropdown.Item>
+                <Dropdown.Item eventKey='Team C' onSelect={this.selectTeam}>Team C</Dropdown.Item>
+                <Dropdown.Divider/>
+                <Dropdown.Item eventKey='All Teams' onSelect={this.selectTeam}>All Teams</Dropdown.Item>
+              </DropdownButton>
+            </div>
+          </div>
           {this.showVPNInfo()}
           <p style={{color:'red'}}><b>**Users are to set their VPN setting when they connect and disconnect to VPN. ** 
                                Priority 3 users must disconnect when the available number of VPN connections goes to or below 3.
                                Those that have been on longest should disconnect first.**</b></p>
 
-          <DropdownButton id="dropdown-basic-button" title={this.state.selectedTeam}>
-            <Dropdown.Item eventKey='Team A' onSelect={this.selectTeam}>Team A</Dropdown.Item>
-            <Dropdown.Item eventKey='Team B' onSelect={this.selectTeam}>Team B</Dropdown.Item>
-            <Dropdown.Item eventKey='Team C' onSelect={this.selectTeam}>Team C</Dropdown.Item>
-            <Dropdown.Divider/>
-            <Dropdown.Item eventKey='All Teams' onSelect={this.selectTeam}>All Teams</Dropdown.Item>
-          </DropdownButton>
+
           <div className="row" style={{justifyContent:'center'}}>
             {/* <div className="column"><Team name="Priority 1" teamList={[0, 1]} currentlyConnected={this.state.currentConnections} timeUsed={this.state.timeUsed} using={this.using} /></div> */}
 
