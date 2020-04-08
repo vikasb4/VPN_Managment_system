@@ -40,11 +40,6 @@ export default {
     team: "IT Solution Delivery",
   },
 
-  "10": {
-    name: "Vrao P",
-    email: "Vrao_Polavarapu@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
   "11": {
     name: "Shekin K",
     email: "Shekin_Kandathil@cooperators.ca",

@@ -1,5 +1,5 @@
 export default {
-  "IT Solution Delivery": 59,
+  "IT Solution Delivery": 60,
   "BI Sovereign": 7,
-   "CBS": 29
+  "CBS": 38
 };

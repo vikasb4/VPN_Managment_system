@@ -190,7 +190,6 @@ class App extends React.Component {
               <Dropdown.Item eventKey="CBS" onSelect={this.selectTeam}>
                 CBS
               </Dropdown.Item>
-              <Dropdown.Divider />
             </DropdownButton>
           </div>
         </div>
@@ -219,7 +218,6 @@ class App extends React.Component {
                 5,
                 6,
                 7,
-                10,
                 11,
                 13,
                 14,
