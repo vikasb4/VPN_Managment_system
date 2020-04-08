@@ -694,7 +694,7 @@ export default {
     team: "IT Solution Delivery",
   },
   "259": {
-    name: "Dianna C",
+    name: "Dianna Ch",
     email: "Dianna_Chan@cooperators.ca",
     team: "IT Solution Delivery",
   },
@@ -729,7 +729,7 @@ export default {
     team: "IT Solution Delivery",
   },
   "267": {
-    name: "Allen Z",
+    name: "Allen Zh",
     email: "Allen_Zhang@cooperators.ca",
     team: "IT Solution Delivery",
   },
