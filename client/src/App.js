@@ -352,9 +352,8 @@ class App extends React.Component {
                                 152,
                                 153,
                                 600,
-                                601,
-                                602,
-                                603,
+               601,602,603,604,605,606,607,608,609
+
                             ]}
                             currentlyConnected={this.state.currentConnections}
                             timeUsed={this.state.timeUsed}
@@ -433,14 +432,6 @@ class App extends React.Component {
                                 268,
                                 269,
                                 270,
-                                700,
-                                701,
-                                702,
-                                703,
-                                704,
-                                705,
-                                706,
-                                707,
                                 400,
                                 401,
                                 402,

@@ -831,25 +831,20 @@ export default {
   "522": { name: "Sairish K", email: "  ", team: "CBS" },
   "523": { name: "Sheri E", email: "  ", team: "CBS" },
   "524": { name: "Tamarin Y ", email: "  ", team: "CBS" },
-
-
-
+  "525": { name: "Dianna C", email: "  ", team: "CBS" },
   "600": { name: "Cheryl H", email: "  ", team: "CBS" },
   "601": { name: "Holly  C", email: "  ", team: "CBS" },
   "602": { name: "Sue T", email: "  ", team: "CBS" },
   "603": { name: "Ashleigh B", email: "  ", team: "CBS" },
-  
+  "604": { name: "Vrao P", email: "  ", team: "CBS" },
+  "605": { name: "Allen Z", email: "  ", team: "CBS" },
+  "606": { name: "Irene S", email: "  ", team: "CBS" },
+  "607": { name: "Trisha B", email: "  ", team: "CBS" },
+  "608": { name: "Stephanie C", email: "  ", team: "CBS" },
+  "609": { name: "Mohammed s", email: "  ", team: "CBS" },
 
-  "700": { name: "Dianna C", email: "  ", team: "CBS" },
-  "701": { name: "Jessica L", email: "  ", team: "CBS" },
-
-  "702": { name: "Vrao P", email: "  ", team: "CBS" },
-
-  "703": { name: "Allen Z", email: "  ", team: "CBS" },
-  "704": { name: "Irene S", email: "  ", team: "CBS" },
-  "705": { name: "Trisha B", email: "  ", team: "CBS" },
-  "706": { name: "Stephanie C", email: "  ", team: "CBS" },
-  "707": { name: "Mohammed s", email: "  ", team: "CBS" }
+  "610":{ name: "Jessica L", email: "  ", team: "CBS" },
+"611":{ name: "Nicole M", email: "  ", team: "CBS" }
 
 
 };
