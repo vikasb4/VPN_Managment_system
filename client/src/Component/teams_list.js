@@ -44,7 +44,11 @@ class Team extends React.Component {
     Handler = (Userid, value) => {
         // console.log(`the handler funciotn invoked with ${value}`);
         number = `${value}`;
-        this.props.using(number, data[Userid].name, data[Userid].email);
+        this.props.using(
+            number,
+            usersData[Userid].name,
+            usersData[Userid].email
+        );
     };
 
     render() {
