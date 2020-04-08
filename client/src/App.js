@@ -141,7 +141,7 @@ class App extends React.Component {
             <h2 style={{ marginLeft: "auto" }}>
               Available VPNs:
               <label style={{ color: "red" }}>
-                {59 - this.state.currentConnections.length}
+                {60 - this.state.currentConnections.length}
               </label>
             </h2>
           </div>
