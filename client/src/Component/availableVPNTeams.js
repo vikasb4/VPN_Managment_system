@@ -1,5 +1,5 @@
 export default {
-    'Team A': 59,
-    'Team B': 30,
-    'Team C': 20,
+  "IT Solution Delivery": 59,
+  "BI Sovereign": 7,
+   "CBS": 29
 };
