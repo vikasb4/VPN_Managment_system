@@ -146,6 +146,7 @@ export default {
     email: "John_Peart@cooperators.ca",
     team: "IT Solution Delivery",
   },
+  
 
   "100": {
     name: "Ben F",
@@ -418,6 +419,16 @@ export default {
     email: "Brenton_Fairless@cooperators.ca",
     team: "IT Solution Delivery",
   },
+  "154": {
+    name: "Richard F",
+    email: "Richard_Fu@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
+  "155": {
+    name: "Nina Y",
+    email: "Nina_Yang@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
 
   "200": {
     name: "Ron M",
@@ -432,11 +443,6 @@ export default {
   "202": {
     name: "Yifei Z",
     email: "Yifei_Zhang@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
-  "203": {
-    name: "Richard F",
-    email: "Richard_Fu@cooperators.ca",
     team: "IT Solution Delivery",
   },
   "204": {
@@ -476,11 +482,7 @@ export default {
     team: "IT Solution Delivery",
   },
 
-  "213": {
-    name: "Nina Y",
-    email: "Nina_Yang@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "214": {
     name: "Tim G",
     email: "Tim_Gapakov@cooperators.ca",
