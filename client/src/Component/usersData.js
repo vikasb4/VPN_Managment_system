@@ -429,6 +429,31 @@ export default {
     email: "Nina_Yang@cooperators.ca",
     team: "IT Solution Delivery",
   },
+  "156": {
+    name: "Jeremy W",
+    email: "Jeremy_Weber@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
+  "157": {
+    name: "Lesley F",
+    email: "Lesley_Fairbairn@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
+  "158": {
+    name: "Cheri D",
+    email: "Cheri_Davidson@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
+  "159": {
+    name: "Amandeep P",
+    email: "Amandeep_Paul@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
+  "160": {
+    name: "Jagjit G",
+    email: "Jagjit_Gill@cooperators.ca",
+    team: "IT Solution Delivery",
+  },
 
   "200": {
     name: "Ron M",
@@ -513,11 +538,7 @@ export default {
     email: "Andrzej_Sienkiewicz@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "221": {
-    name: "Jeremy W",
-    email: "Jeremy_Weber@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
 
   "224": {
     name: "Trisha B",
@@ -574,21 +595,13 @@ export default {
     email: "Denise_Balkissoon@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "235": {
-    name: "Lesley F",
-    email: "Lesley_Fairbairn@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "236": {
     name: "Cheri D",
     email: "Cheri_Davidson@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "237": {
-    name: "Amandeep P",
-    email: "Amandeep_Paul@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "238": {
     name: "Ashraf H",
     email: "Ashraf_Haddad@cooperators.ca",
@@ -670,11 +683,7 @@ export default {
     email: "Raja_Boppana@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "254": {
-    name: "Jagjit G",
-    email: "Jagjit_Gill@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "255": {
     name: "Subra S",
     email: "Subra_Swarnan@cooperators.ca",
