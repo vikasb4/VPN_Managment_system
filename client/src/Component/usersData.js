@@ -288,11 +288,7 @@ export default {
     email: "Paul_Hoy@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "128": {
-    name: "Jeff G",
-    email: "Jeff_Grimes@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "129": {
     name: "Danielle K",
     email: "Danielle_Kacheff@cooperators.ca",
@@ -329,11 +325,7 @@ export default {
     email: "Patrick_Telfer@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "136": {
-    name: "Usman A",
-    email: "Usman_Arshad@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "137": {
     name: "Venkata V",
     email: "Venkata_Vinjamuri@cooperators.ca",
@@ -354,11 +346,7 @@ export default {
     email: "Shwinky_Sood@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "141": {
-    name: "John Q",
-    email: "John_Quinsay@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+ 
   "142": {
     name: "Jared S",
     email: "Jared_Saunders@cooperators.ca",
@@ -638,11 +626,7 @@ export default {
     email: "Zankhana_Bavishi@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "245": {
-    name: "Nicole M",
-    email: "Nicole_MacLean@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+ 
   "246": {
     name: "Mariya C",
     email: "Mariya_Calcuttawala@cooperators.ca",
@@ -689,11 +673,7 @@ export default {
     email: "Subra_Swarnan@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "256": {
-    name: "Stephanie C",
-    email: "Stephanie_Crumb@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
   "257": {
     name: "Nick P",
     email: "Nick_Petropoulos@cooperators.ca",
@@ -729,16 +709,8 @@ export default {
     email: "Ravi_Kambo@cooperators.ca",
     team: "IT Solution Delivery",
   },
-  "265": {
-    name: "Ashleigh B",
-    email: "Ashleigh_Bogart@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
-  "266": {
-    name: "Sue T",
-    email: "Sue_Try@cooperators.ca",
-    team: "IT Solution Delivery",
-  },
+  
+  
   "267": {
     name: "Allen Zh",
     email: "Allen_Zhang@cooperators.ca",
@@ -856,6 +828,7 @@ export default {
 
   "610":{ name: "Jessica L", email: "  ", team: "CBS" },
 "611":{ name: "Nicole M", email: "  ", team: "CBS" },
+"700":{ name: "Jyoti R", email: " ", team: "P&C Delivery" },
 "701":{ name: "Graydon T", email: " ", team: "P&C Delivery" },
 "702":{ name: "Jacob E", email: " ", team: "P&C Delivery" },
 "703":{ name: "Jason S", email: " ", team: "P&C Delivery" },
@@ -893,7 +866,8 @@ export default {
 "735":{ name: "Jacqueline ", email: " ", team: "P&C Delivery" },
 "736":{ name: "Rajendranath A", email: " ", team: "P&C Delivery" },
 "737":{ name: "Pavan K", email: " ", team: "P&C Delivery" },
-"738":{ name: "Andrew J", email: " ", team: "P&C Delivery" },
+
+"739":{ name: "Ramachandran R", email: " ", team: "P&C Delivery" },
 "801":{ name: "BaoSheng L", email: " ", team: "P&C Delivery" },
 "802":{ name: "Carrie W", email: " ", team: "P&C Delivery" },
 "803":{ name: "Davind I", email: " ", team: "P&C Delivery" },
@@ -907,6 +881,7 @@ export default {
 "811":{ name: "Marta W", email: " ", team: "P&C Delivery" },
 "812":{ name: "David C", email: " ", team: "P&C Delivery" },
 "813":{ name: "Jaykumar R", email: " ", team: "P&C Delivery" },
+"814":{ name: "Andrew J", email: " ", team: "P&C Delivery" },
 "901":{ name: "Chris L", email: " ", team: "P&C Delivery" },
 "902":{ name: "Andrews A", email: " ", team: "P&C Delivery" },
 "903":{ name: "Kevin B", email: " ", team: "P&C Delivery" },
@@ -926,7 +901,7 @@ export default {
 "917":{ name: "Drew  ", email: " ", team: "P&C Delivery" },
 "918":{ name: "Mike P", email: " ", team: "P&C Delivery" },
 "919":{ name: "Praveen S", email: " ", team: "P&C Delivery" },
-"920":{ name: "Ramachandran R", email: " ", team: "P&C Delivery" },
+
 "921":{ name: "Shilpa S", email: " ", team: "P&C Delivery" },
 "922":{ name: "Maximus N", email: " ", team: "P&C Delivery" },
 "923":{ name: "Ed M", email: " ", team: "P&C Delivery" },
@@ -935,6 +910,8 @@ export default {
 "926":{ name: "Rick B", email: " ", team: "P&C Delivery" },
 "927":{ name: "Mike T", email: " ", team: "P&C Delivery" },
 "928":{ name: "Sahithi R", email: " ", team: "P&C Delivery" },
+"929":{ name: "Mike C", email: " ", team: "P&C Delivery" },
+
 "1001":{ name: "Darcy B", email: " ", team: "P&C Claims" },
 "1002":{ name: "Andrew F", email: " ", team: "P&C Claims" },
 "1003":{ name: "Asif H", email: " ", team: "P&C Claims" },
@@ -948,8 +925,69 @@ export default {
 "1203":{ name: "Christine B", email: " ", team: "P&C Claims" },
 "1204":{ name: "Harish N", email: " ", team: "P&C Claims" },
 "1205":{ name: "Monika P", email: " ", team: "P&C Claims" },
-"1206":{ name: "Sarah B", email: " ", team: "P&C Claims" }
+"1206":{ name: "Sarah B", email: " ", team: "P&C Claims" },
 
+"1401":{ name: "Akshay M", email: " ", team: "P&C Digital and QA" },
+"1402":{ name: "Ananth K", email: " ", team: "P&C Digital and QA" },
+"1403":{ name: "Andrew R", email: " ", team: "P&C Digital and QA" },
+"1404":{ name: "Bob N", email: " ", team: "P&C Digital and QA" },
+"1405":{ name: "Camilla P", email: " ", team: "P&C Digital and QA" },
+"1406":{ name: "Dan G", email: " ", team: "P&C Digital and QA" },
+"1407":{ name: "Edah D", email: " ", team: "P&C Digital and QA" },
+"1408":{ name: "Elaine Z", email: " ", team: "P&C Digital and QA" },
+"1409":{ name: "Joshua A", email: " ", team: "P&C Digital and QA" },
+"1410":{ name: "Karthik B", email: " ", team: "P&C Digital and QA" },
+"1411":{ name: "Kaushik R", email: " ", team: "P&C Digital and QA" },
+"1412":{ name: "Matthew T", email: " ", team: "P&C Digital and QA" },
+"1413":{ name: "Navdeep D", email: " ", team: "P&C Digital and QA" },
+"1414":{ name: "Nikhil N", email: " ", team: "P&C Digital and QA" },
+"1415":{ name: "Nikhil V", email: " ", team: "P&C Digital and QA" },
+"1416":{ name: "Pavan U", email: " ", team: "P&C Digital and QA" },
+"1417":{ name: "Rajeev P", email: " ", team: "P&C Digital and QA" },
+"1418":{ name: "Tanya M", email: " ", team: "P&C Digital and QA" },
+
+"1501":{ name: "Jane D", email: " ", team: "P&C Digital and QA" },
+"1502":{ name: "Jebby V", email: " ", team: "P&C Digital and QA" },
+"1503":{ name: "Marianne T", email: " ", team: "P&C Digital and QA" },
+"1504":{ name: "Sarab S", email: " ", team: "P&C Digital and QA" },
+"1505":{ name: "Sayantan D", email: " ", team: "P&C Digital and QA" },
+"1506":{ name: "Vignesh S", email: " ", team: "P&C Digital and QA" },
+
+"1601":{ name: "Tanbir G", email: " ", team: "Client and Digital Solutions" },
+"1602":{ name: "Erin M", email: " ", team: "Client and Digital Solutions" },
+"1603":{ name: "Stacey K", email: " ", team: "Client and Digital Solutions" },
+"1604":{ name: "Wendi P", email: " ", team: "Client and Digital Solutions" },
+"1605":{ name: "Guy L", email: " ", team: "Client and Digital Solutions" },
+"1606":{ name: "Naren K", email: " ", team: "Client and Digital Solutions" },
+"1607":{ name: "Susan  ", email: " ", team: "Client and Digital Solutions" },
+"1608":{ name: "Patrick L", email: " ", team: "Client and Digital Solutions" },
+"1609":{ name: "Victor C", email: " ", team: "Client and Digital Solutions" },
+"1610":{ name: "Andrea J", email: " ", team: "Client and Digital Solutions" },
+"1611":{ name: "Danielle S", email: " ", team: "Client and Digital Solutions" },
+"1612":{ name: "Peter E", email: " ", team: "Client and Digital Solutions" },
+"1613":{ name: "Kevin M", email: " ", team: "Client and Digital Solutions" },
+"1701":{ name: "Shirley B", email: " ", team: "Client and Digital Solutions" },
+"1702":{ name: "Shannon H", email: " ", team: "Client and Digital Solutions" },
+"1801":{ name: "Trudy P", email: " ", team: "Client and Digital Solutions" },
+"1802":{ name: "Heather H", email: " ", team: "Client and Digital Solutions" },
+"1803":{ name: "Julia B", email: " ", team: "Client and Digital Solutions" },
+"1804":{ name: "Jan V", email: " ", team: "Client and Digital Solutions" },
+"1805":{ name: "Sherelle B", email: " ", team: "Client and Digital Solutions" },
+"1806":{ name: "Ellie S", email: " ", team: "Client and Digital Solutions" },
+"1807":{ name: "Rosemary B", email: " ", team: "Client and Digital Solutions" },
+"1808":{ name: "Steve D", email: " ", team: "Client and Digital Solutions" },
+"1809":{ name: "Usman A", email: " ", team: "Client and Digital Solutions" },
+"1810":{ name: "John J", email: " ", team: "Client and Digital Solutions" },
+"1811":{ name: "Jeff G", email: " ", team: "Client and Digital Solutions" },
+"2001":{ name: "Laurent N", email: " ", team: "Data & Analytics Governance" },
+"2002":{ name: "Etienne C", email: " ", team: "Data & Analytics Governance" },
+"2003":{ name: "Chantal G", email: " ", team: "Data & Analytics Governance" },
+"2004":{ name: "Rob C", email: " ", team: "Data & Analytics Governance" },
+"2005":{ name: "Isabelle V", email: " ", team: "Data & Analytics Governance" },
+"2006":{ name: "Lisa J", email: " ", team: "Data & Analytics Governance" },
+"2011":{ name: "Alex O", email: " ", team: "Data & Analytics Governance" },
+"2012":{ name: "Ryan D", email: " ", team: "Data & Analytics Governance" },
+"2013":{ name: "Emily B", email: " ", team: "Data & Analytics Governance" }
 
 
 

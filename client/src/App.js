@@ -217,6 +217,25 @@ class App extends React.Component {
                             >
                                 P&C Claims
                             </Dropdown.Item>
+
+                            <Dropdown.Item
+                                eventKey="P&C Digital and QA"
+                                onSelect={this.selectTeam}
+                            >
+                                P&C Digital and QA
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                eventKey= "Client and Digital Solutions"
+                                onSelect={this.selectTeam}
+                            >
+                                 Client and Digital Solutions
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                eventKey= "Data & Analytics Governance"
+                                onSelect={this.selectTeam}
+                            >
+                                 Data & Analytics Governance
+                            </Dropdown.Item>
                         </DropdownButton>
                     </div>
                 </div>
@@ -297,6 +316,7 @@ class App extends React.Component {
                                 523,
                                 524,
                                 525,
+                                700,
                                 701,
                                 702,
                                 703,
@@ -334,10 +354,24 @@ class App extends React.Component {
                                 735,
                                 736,
                                 737,
-                                738,
+                              
+                                739,
                                 1001,
                                 1002,
-                                1003
+                                1003,
+                                1601,
+                                1602,
+                                1603,
+                                1604,
+                                1605,
+                                1606,
+                                1607,
+                                1608,
+                                1609,
+                                1610,
+                                1611,
+                                1612,
+                                1613
                             ]}
                             currentlyConnected={this.state.currentConnections}
                             timeUsed={this.state.timeUsed}
@@ -379,7 +413,7 @@ class App extends React.Component {
                                 125,
                                 126,
                                 127,
-                                128,
+                              
                                 129,
                                 130,
                                 131,
@@ -387,12 +421,12 @@ class App extends React.Component {
                                 133,
                                 134,
                                 135,
-                                136,
+                               
                                 137,
                                 138,
                                 139,
                                 140,
-                                141,
+                            
                                 142,
                                 143,
                                 144,
@@ -420,11 +454,40 @@ class App extends React.Component {
                811,
                812,
                813,
+               814,
                1101,
                1102,
                1103,
                1104,
-               1105
+               1105,
+               1401,
+               1402,
+               1403,
+               1404,
+               1405,
+               1406,
+               1407,
+               1408,
+               1409,
+               1410,
+               1411,
+               1412,
+               1413,
+               1414,
+               1415,
+               1416,
+               1417,
+               1418,
+               1701,
+               1702,
+               2001,
+               2002,
+               2003,
+               2004,
+               2005,
+               2006
+
+
 
                             ]}
                             currentlyConnected={this.state.currentConnections}
@@ -479,7 +542,7 @@ class App extends React.Component {
                                 241,
                                 243,
                                 244,
-                                245,
+                               
                                 246,
                                 247,
                                 248,
@@ -490,7 +553,7 @@ class App extends React.Component {
                                 253,
                               
                                 255,
-                                256,
+                               
                                 257,
                                 258,
                                 259,
@@ -498,8 +561,8 @@ class App extends React.Component {
                                 261,
                                 262,
                                 264,
-                                265,
-                                266,
+                                
+                              
                                 267,
                                 268,
                                 269,
@@ -532,7 +595,7 @@ class App extends React.Component {
                                 917,
                                 918,
                                 919,
-                                920,
+                               
                                 921,
                                 922,
                                 923,
@@ -541,12 +604,33 @@ class App extends React.Component {
                                 926,
                                 927,
                                 928,
+                                929,
                                 1201,
                                 1202,
                                 1203,
                                 1204,
                                 1205,
-                                1206
+                                1206,
+                                1501,
+                                1502,
+                                1503,
+                                1504,
+                                1505,
+                                1506,
+                                1801,
+                                1802,
+                                1803,
+                                1804,
+                                1805,
+                                1806,
+                                1807,
+                                1808,
+                                1809,
+                                1810,
+                                1811,
+                                2011,
+                                2012,
+                                2013
                             ]}
                             currentlyConnected={this.state.currentConnections}
                             timeUsed={this.state.timeUsed}
